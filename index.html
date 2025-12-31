@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1d2671">
+  <link rel="stylesheet" href="style3.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+    @font-face {
+      font-family: "September Twilight";
+      src: url("fonts/SeptemberTwilight.ttf") format("truetype");
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav class="glass-nav">
+  <span class="logo" style="font-family: 'September Twilight', cursive; font-size: 12px"><img src="icons/gene.svg" class=logo-icon>rAhuL.M</span>
+  <div class="nav-links">
+  <a data-page="home" id="nav-home" class="active">Home</a>
+  <a data-page="links" id="nav-links">My Links</a>
+</div>
+</nav>
+<div id="home" class="page active">
+  <div class="portfolio">
+    <div class="profile-glass">
+      <img src="images/profile.jpg" alt="Profile">
+    </div>
+<div class="hero">
+  <div class="hero-img">
+  </div>
+  <div class="hero-card">
+  <h2>Hello there!</h2>
+  <h1>I'm Rahul Mahato</h1>
+
+  <p class="intro">
+    I'm a Class 11 Science student who enjoys learning and building things on the web.<br>
+    Exploring HTML, CSS, and Python step by step.
+  </p>
+
+  <div class="tags">
+    Design • Mobile Photography • Visual Creativity
+  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+<div id="links" class="page">
+  <div class="portfolio">
+    <div class="buttons">
+      <a href="https://github.com/matho-rahuL" target="_blank"><img src="icons/Github.svg" class="icon colored"> mahto-rahuL
+      </a>
+      <a href="https://anilist.co/user/rAAAhuL/" target="_blank"><img src="icons/anilist.svg" class="icon colored"> rAAAhuL
+      <a href="https://myanimelist.net/profile/_rAhuL_D_" target="_blank"><img src="icons/mal.svg" class="icon colored"> _rAhuL_D_
+      </a>
+      <a href="https://www.linkedin.com/in/m-hto--rahul" target="_blank"><img src="icons/linkedin.svg" class="icon colored"> m-hto--rahul
+      </a>
+      <a href="https://www.instagram.com/rahul__m_hto?igsh=cWM5OGNjdTExMDFv" target="_blank"><img src="icons/instagram.svg" class="icon colored"> rahul__m_hto
+      </a>
+      <a href="https://www.instagram.com/_.raaahul.d?igsh=MXJtaHVza3Q5ajlpbg==" target="_blank"><img src="icons/instagram.svg" class="icon colored"> _.raaahul.d
+      </a>
+      <a href="https://bsky.app/profile/raaahul.bsky.social" target="_blank"><img src="icons/bluesky.svg" class="icon colored"> raaahul.bsky.social
+      </a>
+    </div>
+  </div>
+</div>
+<script>
+  const navLinks = document.querySelectorAll(".nav-links a");
+  const pages = document.querySelectorAll(".page");
+  navLinks.forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      const target = link.dataset.page;
+      pages.forEach(page => {
+        page.classList.toggle("active", page.id === target);
+      });
+      navLinks.forEach(l => l.classList.remove("active"));
+      link.classList.add("active");
+    });
+  });
+</script>
+<script>
+  const navLinks = document.querySelectorAll(".nav-links a");
+  const pages = document.querySelectorAll(".page");
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      const target = link.dataset.page;
+      pages.forEach(page =>
+        page.classList.toggle("active", page.id === target)
+      );
+      navLinks.forEach(l => l.classList.remove("active"));
+      link.classList.add("active");
+    });
+  });
+</script>
+</body>
+</html>
