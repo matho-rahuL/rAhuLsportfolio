@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1d2671">
+  <title>rAhuL's Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @font-face {
+      font-family: "September Twilight";
+      src: url("fonts/SeptemberTwilight.ttf") format("truetype");
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav class="glass-nav">
+  <span class="logo">
+    <img src="icons/gene.svg" class="logo-icon">
+    rAhuL.M
+  </span>
+  <div class="nav-links">
+    <a data-page="home" class="active">Home</a>
+    <a data-page="links">My Links</a>
+  </div>
+</nav>
+<div id="home" class="page active">
+  <div class="portfolio">
+    <div class="profile-glass fade profile">
+      <img src="images/profile.jpg" alt="Profile">
+    </div>
+    <div class="hero">
+      <div class="hero-card">
+        <div class="hero-text">
+          <h2 class="fade heading">Hello there!</h2>
+          <h1 class="fade heading">I'm Rahul Mahato</h1>
+          <p class="intro fade text">
+            I'm a Class 11 Science student who enjoys learning and building things on the web.<br>
+            Exploring HTML, CSS, and Python step by step.
+          </p>
+          <div class="tags fade text">
+            Design • Mobile Photography • Visual Creativity
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="links" class="page">
+  <div class="portfolio">
+    <div class="buttons">
+      <a href="https://github.com/matho-rahuL" target="_blank">
+        <img src="icons/github.svg" class="icon colored"> matho-rahuL
+      </a>
+      <a href="https://anilist.co/user/rAAAhuL/" target="_blank">
+        <img src="icons/anilist.svg" class="icon colored"> rAAAhuL
+      </a>
+      <a href="https://myanimelist.net/profile/_rAhuL_D_" target="_blank">
+        <img src="icons/mal.svg" class="icon colored"> _rAhuL_D_
+      </a>
+      <a href="https://www.linkedin.com/in/m-hto--rahul" target="_blank">
+        <img src="icons/linkedIn.svg" class="icon colored"> m-hto--rahul
+      </a>
+      <a href="https://www.instagram.com/rahul__m_hto" target="_blank">
+        <img src="icons/instagram.svg" class="icon colored"> rahul__m_hto
+      </a>
+      <a href="https://bsky.app/profile/raaahul.bsky.social" target="_blank">
+        <img src="icons/bluesky.svg" class="icon colored"> raaahul.bsky.social
+      </a>
+    </div>
+  </div>
+</div>
+<script>
+  const navLinks = document.querySelectorAll(".nav-links a");
+  const pages = document.querySelectorAll(".page");
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      const target = link.dataset.page;
+
+      pages.forEach(page =>
+        page.classList.toggle("active", page.id === target)
+      );
+
+      navLinks.forEach(l => l.classList.remove("active"));
+      link.classList.add("active");
+    });
+  });
+</script>
+
+<!-- FIRST VISIT ANIMATION -->
+<script>
+  const fades = document.querySelectorAll("#home .fade");
+
+  if (!localStorage.getItem("homeAnimated")) {
+    fades.forEach(el => el.classList.add("animate"));
+    localStorage.setItem("homeAnimated", "true");
+  } else {
+    fades.forEach(el => {
+      el.style.opacity = "1";
+      el.style.transform = "none";
+    });
+  }
+</script>
+</body>
+</html>
