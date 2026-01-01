@@ -1,4 +1,4 @@
-* {
+{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -52,7 +52,7 @@ body {
 }
 
 .logo-icon {
-  width: 22px;
+  width: 30px;
 }
 
 .nav-links {
