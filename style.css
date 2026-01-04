@@ -177,7 +177,21 @@ html, body {
 .link-content {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
+  width: 100%;
+}
+
+.link-content i,
+.link-content img,
+.link-content svg {
+  display: block;  
+  width: 22px;
+  height: 22px;
+}
+
+.link-btn {
+  text-align: center;
 }
 
 .link-content i,
