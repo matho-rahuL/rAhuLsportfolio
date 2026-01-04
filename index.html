@@ -1,43 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#1d2671">
-  <title>rAhuL's Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1d2671" />
+  <title>Rahul Mahato | Portfolio</title>
+
+  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+
   <style>
     @font-face {
       font-family: "September Twilight";
       src: url("fonts/SeptemberTwilight.ttf") format("truetype");
     }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
 </head>
+
 <body>
+
+<!-- NAV -->
 <nav class="glass-nav">
   <span class="logo">
     <img src="icons/gene.svg" class="logo-icon">
     rAhuL.M
   </span>
+
   <div class="nav-links">
     <a data-page="home" class="active">Home</a>
     <a data-page="links">My Links</a>
   </div>
 </nav>
-<div id="home" class="page active">
-  <div class="portfolio">
+
+<!-- HOME -->
+<section id="home" class="page active">
+  <div class="portfolio home-layout">
+
     <div class="profile-glass fade profile">
       <img src="images/profile.jpg" alt="Profile">
     </div>
+
     <div class="hero">
-      <div class="hero-card">
+      <div class="hero-card fade card">
         <div class="hero-text">
           <h2 class="fade heading">Hello there!</h2>
           <h1 class="fade heading">I'm Rahul Mahato</h1>
-          <p class="intro fade text">
-            I'm a Class 11 Science student who enjoys learning and building things on the web.<br>
+          <p class="fade text">
+            I’m a student who loves learning and building things on the web, constantly exploring new technologies to create clean, fast, and user-friendly experiences.<br>
+            Always learning, always building.<br>
             Exploring HTML, CSS, and Python step by step.
           </p>
           <div class="tags fade text">
@@ -46,77 +57,107 @@
         </div>
       </div>
     </div>
+
   </div>
-</div>
-<div id="links" class="page">
+</section>
+
+<!-- LINKS -->
+<section id="links" class="page">
   <div class="portfolio">
-    <div class="buttons">
-      <a href="https://github.com/matho-rahuL" target="_blank">
-        <img src="icons/github.svg" class="icon colored"> matho-rahuL
+
+    <h4 class="section-title fade">Profiles</h4>
+    <div class="links-grid fade">
+      <a class="link-btn" href="https://github.com/matho-rahuL" target="_blank">
+        <span class="link-content">
+        <img src="icons/github.svg">
+        <span class="link-text"> Github </span>
+        </span>
       </a>
-      <a href="https://anilist.co/user/rAAAhuL/" target="_blank">
-        <img src="icons/anilist.svg" class="icon colored"> rAAAhuL
+      <a class="link-btn" href="https://www.linkedin.com/in/m-hto--rahul" target="_blank">
+          <span class="link-content">
+        <img src="icons/linkedIn.svg"> LinkedIn </span>
+        </span>
       </a>
-      <a href="https://myanimelist.net/profile/_rAhuL_D_" target="_blank">
-        <img src="icons/mal.svg" class="icon colored"> _rAhuL_D_
+      <a class="link-btn" href="https://t.me/ryLx_D" target="_blank">
+          <span class="link-content">
+        <img src="icons/telegram.svg"> Telegram </span>
+      </span>
       </a>
-      <a href="https://www.linkedin.com/in/m-hto--rahul" target="_blank">
-        <img src="icons/linkedIn.svg" class="icon colored"> m-hto--rahul
+      <a class="link-btn" href="https://bsky.app/profile/raaahul.bsky.social" target="_blank">
+          <span class="link-content">
+        <img src="icons/bluesky.svg"> Bluesky </span>
+      </span>
       </a>
-      <a href="https://www.instagram.com/rahul__m_hto" target="_blank">
-        <img src="icons/instagram.svg" class="icon colored"> rahul__m_hto
-      </a>
-      <a href="https://bsky.app/profile/raaahul.bsky.social" target="_blank">
-        <img src="icons/bluesky.svg" class="icon colored"> raaahul.bsky.social
-      </a>
+      
     </div>
+    <hr class="section-divider">
+    <h4 class="section-title fade">Social</h4>
+    <div class="links-grid fade">
+      <a class="link-btn" href="https://anilist.co/user/rAAAhuL/" target="_blank"><span class="link-content">
+        <img src="icons/anilist.svg"> AniList </span>
+      </span>
+      </a>
+      <a class="link-btn" href="https://myanimelist.net/profile/_rAhuL_D_" target="_blank"><span class="link-content">
+        <img src="icons/mal.svg"> MyAnimeList </span></span>
+      </a>
+      <a class="link-btn" href="https://www.instagram.com/rahul__m_hto" target="_blank"><span class="link-content">
+        <img src="icons/instagram.svg"> rahul__m_hto</span></span>
+      </a>
+      <a class="link-btn" href="https://www.instagram.com/_.raaahul.d" target="_blank"><span class="link-content">
+        <img src="icons/instagram.svg"> _.raaahul.d 
+      </span></span></a>
+    </div>
+
   </div>
-</div>
+</section>
+
 <script>
 (() => {
   const navLinks = document.querySelectorAll(".nav-links a");
   const pages = document.querySelectorAll(".page");
-  const fades = document.querySelectorAll("#home .fade");
+  const fades = document.querySelectorAll(".fade");
   const profile = document.querySelector(".profile-glass");
 
-  /* -------- FIRST VISIT ANIMATION -------- */
-  if (!localStorage.getItem("homeAnimated")) {
-    fades.forEach(el => el.classList.add("animate"));
-
-    if (profile) {
-      profile.classList.add("glow");
-      setTimeout(() => profile.classList.add("pulse"), 1400);
-    }
-
-    localStorage.setItem("homeAnimated", "true");
-  } else {
-    fades.forEach(el => {
-      el.style.opacity = "1";
-      el.style.transform = "none";
+  /* First load animation */
+  if (!localStorage.getItem("portfolioAnimated")) {
+    fades.forEach((el, i) => {
+      setTimeout(() => el.classList.add("animate"), i * 120);
     });
-    profile?.classList.add("pulse");
+
+    profile.classList.add("pulse");
+    localStorage.setItem("portfolioAnimated", "true");
+  } else {
+    fades.forEach(el => el.classList.add("animate"));
+    profile.classList.add("pulse");
   }
 
-  /* -------- NAV SWITCH + PULSE CONTROL -------- */
+  /* Navigation */
   navLinks.forEach(link => {
     link.addEventListener("click", () => {
       const target = link.dataset.page;
 
-      pages.forEach(page =>
-        page.classList.toggle("active", page.id === target)
-      );
-
+      pages.forEach(p => p.classList.toggle("active", p.id === target));
       navLinks.forEach(l => l.classList.remove("active"));
       link.classList.add("active");
 
-      if (!profile) return;
-
-      target === "home"
-        ? profile.classList.add("pulse")
-        : profile.classList.remove("pulse");
+      profile.classList.toggle("pulse", target === "home");
     });
   });
 })();
+
+document.addEventListener("visibilitychange", () => {
+  const profile = document.querySelector(".profile-glass");
+  if (!profile) return;
+
+  if (document.hidden) {
+    profile.classList.remove("pulse");
+  } else {
+    if (document.querySelector("#home").classList.contains("active")) {
+      profile.classList.add("pulse");
+    }
+  }
+});
 </script>
+
 </body>
 </html>
