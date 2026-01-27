@@ -1,0 +1,338 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  background: url("images/background.jpg") center / cover no-repeat fixed;
+  overflow-x: hidden;
+}
+
+/* GLASS BASE */
+.glass-nav, .portfolio, .hero-card {
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 22px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+}
+
+/* NAV */
+.glass-nav {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 24px);
+  max-width: 1000px;
+  padding: 12px 18px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "September Twilight", cursive;
+}
+
+.logo-icon { width: 26px; }
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  position: relative;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 0;
+  line-height: 1.2;
+  font-family: "Poiret One", cursive;
+}
+
+/* Slider / underline */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 12px;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+/* Active & hover */
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  transform: scaleX(1);
+}
+
+/* PAGE */
+.page { display: none; }
+.page.active { display: block; }
+
+/* LAYOUT */
+.portfolio {
+  max-width: 1000px;
+  margin: 120px auto 80px;
+  padding: 36px;
+}
+
+.home-layout {
+  display: flex;
+  gap: 56px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* PROFILE */
+.profile-glass {
+  width: 150px;
+  height: 150px;
+  padding: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+  position: relative;
+}
+
+.profile-glass img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Pulse ring */
+.profile-glass.pulse::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.5);
+  animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.9); opacity: 0; }
+  30% { opacity: 0.7; }
+  100% { transform: scale(1.3); opacity: 0; }
+}
+
+/* HERO */
+.hero-card {
+  max-width: 460px;
+  padding: 24px;
+  transition: 0.3s;
+}
+
+.hero-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255,255,255,0.28);
+}
+
+.tags {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.25);
+}
+
+/* LINKS */
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.link-btn {
+  height: 52px;
+  border-radius: 999px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20px;
+  background: rgba(255,255,255,0.16);
+  border: 1px solid rgba(255,255,255,0.28);
+  text-decoration: none;
+  color: #fff;
+  transition: 0.25s;
+}
+
+.link-btn:hover {
+  background: rgba(255,255,255,0.26);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+.link-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.link-content i,
+.link-content img {
+  width: 22px;
+  height: 22px;
+  opacity: 0.9;
+  flex-shrink: 0;
+}
+
+.svg-icon { filter: invert(1); }
+
+.link-text {
+  font-size: 15px;
+  letter-spacing: 0.3px;
+}
+
+/* SOCIAL */
+.social-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.social-grid .link-btn {
+  height: 46px;
+  font-size: 14px;
+}
+
+/* DIVIDER */
+.section-divider {
+  border: none;
+  height: 1px;
+  margin: 20px 0 14px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.45), transparent);
+}
+
+/* EDUCATION */
+.section-title {
+  font-size: 18px;
+  margin-bottom: 14px;
+  font-family: "Poiret One", cursive;
+  letter-spacing: 1px;
+}
+
+.edu-list {
+  display: grid;
+  gap: 16px;
+}
+
+.edu-card {
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.16);
+  border: 1px solid rgba(255,255,255,0.28);
+}
+
+.edu-card h3 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.edu-meta {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.edu-card p {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* HOBBIES */
+.hobby-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.hobby-card {
+  padding: 12px 14px;
+  text-align: center;
+  border-radius: 999px;
+  font-size: 14px;
+  background: rgba(255,255,255,0.16);
+  border: 1px solid rgba(255,255,255,0.28);
+  transition: 0.25s;
+}
+
+.hobby-card:hover {
+  background: rgba(255,255,255,0.26);
+  transform: translateY(-2px);
+}
+
+/* ANIME HOBBY SPECIAL */
+.anime-hobby {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px;
+  text-align: center;
+}
+
+.anime-hobby .emoji {
+  font-size: 20px;
+}
+
+.anime-hobby .text {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.anime-hobby small {
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+/* subtle glow on hover */
+.anime-hobby:hover {
+  box-shadow: 0 0 18px rgba(255,255,255,0.25);
+}
+
+/* FEATURED CENTER HOBBY */
+.featured-hobby {
+  grid-column: 1 / -1; /* spans full row */
+  justify-self: center;
+  max-width: 260px;
+}
+
+/* make it feel special */
+.featured-hobby {
+  padding: 18px 20px;
+  border-radius: 26px;
+}
+
+/* smoother hover since it's larger */
+.featured-hobby:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* FADE */
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade.animate {
+  opacity: 1;
+  transform: none;
+  transition: 0.6s ease;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .home-layout {
+    flex-direction: column;
+  }
+}
